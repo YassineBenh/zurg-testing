@@ -1,8 +1,6 @@
-version: '3.8'
-
 services:
   zurg:
-    image: ghcr.io/debridmediamanager/zurg-testing:latest    
+    image: ghcr.io/debridmediamanager/zurg-testing:latest
     container_name: zurg
     restart: unless-stopped
     ports:
@@ -21,7 +19,7 @@ services:
       PUID: 1000
       PGID: 1000
     volumes:
-      - /mnt/zurg:/data:rshared # CHANGE /mnt/zurg WITH YOUR PREFERRED MOUNT PATH
+      - /mnt/zurg:/data
       - ./rclone.conf:/config/rclone/rclone.conf
     cap_add:
       - SYS_ADMIN
